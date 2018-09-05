@@ -1,0 +1,104 @@
+\documentclass{iwi}
+\usepackage{paper}
+
+\title{Entschlüsselung von Funksprüchen am Beispiel von Enigma}
+\author{Alan Turing}
+
+\begin{document}
+
+\include{Titelseite}
+\include{Abstract}
+
+\phantomsection 	% Damit Nummierung im Inhaltsverzeichnis und PDF-Lesezeichen richtig ist
+\pagenumbering{Roman}
+	
+\tableofcontents 	% Inhaltsverzeichnis
+\listoffigures 		% Abbildungsverzeichnis
+\listoftables 		% Inhaltsverzeichnis
+\lstlistoflistings	% Listingverzeichnis
+\input{Abkuerzungsverzeichnis}
+% \listoftodos % auskommentieren, wenn leer?
+
+% Hauptteil
+
+\newpage
+\setcounter{frontpages}{\value{page}}
+\pagenumbering{arabic}
+\onehalfspacing % Eigentlich überflüssig, warum trotzdem notwendig?
+
+\chapter{Einleitung} \label{chap:Einleitung}
+
+\section{Motivation} \label{sec:Motivation}
+
+\section{Problemstellung} \label{sec:Problemstellung}
+
+\section{Aufbau der Arbeit} \label{sec:Aufbau}
+
+\chapter{Beispiele} \label{chap:Beispiele}
+
+\section{Ein Abschnitt} \label{sec:Abschnitt}
+
+\subsection{Ein Unterabschnitt} \label{sec:Unterabschnitt}
+
+Jeder Satz steht auf einer neuen Zeile.
+Das merkt man im PDF gar nicht, vereinfacht aber das Arbeiten mit git, da git zeilenweise arbeitet.
+Das ist eine Referenz zu Abschnitt~\ref{chap:Einleitung} mit einem geschützten Leerzeichen.
+
+\section{Abkürzungen} \label{sec:Abkürzungen}
+
+So verwendet man eine \gls{Abk}. Und zwar jedes Mal, wenn man \gls{Abk} benutzt.
+
+\section{Abbildungen} \label{sec:Abbildungen}
+
+Siehe Abbildung~\ref{img:meme}. Abbildungen werden unten oder oben auf einer Seite platziert.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.62\textwidth]{img/science.jpg}
+    \caption{Das ist ein Untertitel}
+    \label{img:meme}
+\end{figure}
+
+\section{Listings} \label{sec:Listings}
+
+Siehe Listing~\ref{lst:helloWorld}. Auch Listings werden unten oder oben auf einer Seite platziert.
+Angabe der Sparche kann entsprechend geändert werden, das Syntax-Highlighting muss in paper.sty für jede Sprache einzeln festgelegt werden.
+
+
+\begin{lstlisting}[float, caption={Hello, World!}, label={lst:helloWorld}, language=C++] 
+#include <iostream>
+
+int main() 
+{
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+\end{lstlisting}
+
+\section{Tabellen} \label{sec:Tabellen}
+
+Siehe Tabelle~\ref{tbl:pokemon} und Quelltextkommentare.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c|ll} % c für eine zentrierte Spalte (#), l für eine links-ausgerichtete Spalte (Name) und das zweite l für die Spalte Typ
+	\# & Name & Typ	\\
+	\hline   
+	1      & Bisasam   & Pflanze   \\
+	137    & Porygon   & Normal    \\
+	151    & Mew       & Psycho    \\
+
+\end{tabular}
+\caption{Eine Beispieltabelle}
+\label{tbl:pokemon}
+\end{center}
+\end{table}
+
+\section{Quellen}
+
+Mit dem Befehl todo können Notizen erstellt werden.
+
+\todo[inline]{Quellen und Literaturverzeichnis}
+
+
+\end{document}

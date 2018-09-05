@@ -1,0 +1,141 @@
+\ProvidesPackage{paper}
+
+% Sprachspezifische Einstellungen
+% \RequirePackage{hyphsubst}
+% \HyphSubstIfExists{ngerman-x-latest}{ 
+% \HyphSubstLet{ngerman}{ngerman-x-latest}}{}
+\RequirePackage[ngerman]{babel}
+
+
+% Eigene Befehle
+\newcommand{\engl}[1]{(engl. 
+	\ifglsentryexists{#1}% 						Überprüfe, ob Parameter ein Akronym ist
+		{\textit{\glsdisp{#1}{\acrlong{#1}}, \acrshort{#1}})}% 	Wenn ja, gebe (engl. long, short) aus
+		{\textit{#1})}%						Wenn nein, gebe (engl. parameter) aus
+}
+
+% Literaturverzeichnis
+% \RequirePackage[
+% 	citestyle=authoryear,
+% 	bibstyle=authortitle,
+% 	sorting=nyt,
+% 	dashed=false,
+% 	backend=biber,
+% 	sortlocale=de_DE,
+% 	hyperref=true,
+% 	defernumbers=true,
+% 	maxcitenames=2,
+% 	mincitenames=1,
+% 	maxbibnames=8,
+% 	uniquelist=false,
+%         url=true,
+%         doi=true,
+%         eprint=false
+% ]{biblatex}
+
+\makeatletter
+\AtBeginDocument{
+  \hypersetup{
+    pdftitle = {\@title},
+    pdfauthor = {\@author},
+%     pdfkeywords = {\@keywords}
+  }
+}
+% \makeatother
+% \DeclareFieldFormat{postnote}{#1}
+% \DeclareFieldFormat{multipostnote}{#1}
+% 
+% \setcounter{biburlnumpenalty}{100} % damit zu lange ISBN-Nummern umgebrochen werden
+
+% Grafiken
+ \RequirePackage{graphicx}
+ \RequirePackage{svg}
+% \RequirePackage{tikz}
+% \usetikzlibrary{arrows, automata, matrix, positioning, shapes, trees}
+\RequirePackage{subfigure}
+
+% \makeatletter
+%  \ifundefined{pdfoutput}{}{\DeclareGraphicsRule{*}{mps}{*}{}}
+%  \akeatother
+
+% Tabellen
+\RequirePackage{booktabs}
+\RequirePackage{tabularx} % Für Tabellen über die ganze Zeilenbreite
+\RequirePackage{array} % Um eigene Tabellentypen zudefinieren
+\RequirePackage{xcolor} % To define own colors
+\RequirePackage{colortbl} % To color rows
+% \RequirePackage{underscore} % To use underscore within tables
+
+\newcommand{\specialcell}[2][l]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}} % To allow forced linebreaks withan tables. Usage: \specialcell{Foo \\ Bar}
+\renewcommand{\arraystretch}{1.5} % Zeilenabstand in Tabellen vergrößern
+\newcolumntype{C}{>{\centering\arraybackslash}X} % Zentrierte Spalte mit größtmöglichster Spalte. Nur innerhalb tabularx-Umgeung
+
+% Listings
+\RequirePackage{listings}
+\newcounter{numc}
+
+\lstset{
+  frame = single,
+  captionpos = b,
+  float = !tb,
+  floatplacement = !tb,
+  numbers = left,
+  basicstyle=\ttfamily,
+  breaklines = true
+}
+
+\lstset{language=C++,
+                basicstyle=\ttfamily,
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+}
+
+\RequirePackage[color=red]{todonotes}
+
+\makeatletter
+  \lst@AddToHook{EveryLine}{\stepcounter{numc}}%
+  \lst@AddToHook{PreInit}{\setcounter{numc}{0}}%
+\makeatother
+
+% Formatierung
+\RequirePackage[hyphens]{url} % URLs verlinken mit Trennung beim Bindestrich
+
+% Formeln
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{float}
+\RequirePackage{mathptmx}
+
+% Zitate
+\RequirePackage[autostyle, babel]{csquotes}
+\makeatletter
+\newcommand{\zitat}[3][\empty]{%
+    \begingroup
+     \booltrue{withintextquote}%
+    % \settowidth doesn't like paragraphs
+    \setbox\@tempboxa\hbox{%
+        \def\par{\hspace{3\linewidth}}% If a paragraph is included force long form
+        %\let\par\space  % Ignore paragraphs
+        #3}%
+    \ifdim\wd\@tempboxa>3\linewidth
+        \begin{quote}
+        \ifthenelse{\equal{#1}{\empty}}
+            {„\itshape #3\normalfont“
+            
+            \raggedleft{\quelle{#2}}}
+              {„\itshape #3\normalfont“
+              
+              \raggedleft{\quelle[#1]{#2}}}
+        \end{quote}
+    \else
+          \ifthenelse{\equal{#1}{\empty}}%
+       {„\itshape #3 \normalfont“ \quelle{#2}}%
+        {„\itshape #3 \normalfont“ \quelle[#1]{#2}}%
+\fi
+    \endgroup}
+
+% \RequirePackage{microtype}
+\RequirePackage{siunitx}
+\RequirePackage{cleveref}
