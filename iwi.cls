@@ -1,9 +1,9 @@
 \ProvidesClass{iwi}
 \DeclareOption{eisenecker}
 
-% \makeatletter
-% \newcommand\InFloat[2]{\@ifundefined{@captype}{#2}{#1}}
-% \makeatother
+\makeatletter
+\newcommand\InFloat[2]{\@ifundefined{@captype}{#2}{#1}}
+\makeatother
 
 {
   \PassOptionsToPackage{singlespacing}{setspace}
@@ -17,7 +17,7 @@
 \ProcessOptions
 \LoadClass{scrreprt}
 \renewcommand{\abstractname}{Abstract}
-%  \addto\captionsgerman{\renewcommand*\abstractname{Abstract}}
+% \addto\captionsgerman{\renewcommand*\abstractname{Abstract}}
 % \addto\captionsenglish{\renewcommand*\abstractname{Summary}}
 \setuptoc{toc}{totoc}
 
@@ -109,6 +109,6 @@ unicode=true
 	]
 	{glossaries}
 
-% \newglossary[slg]{symb}{syi}{syg}{Symbolverzeichnis} %Symbolverzeichnis erstellen
+\newglossary[slg]{symb}{syi}{syg}{Symbolverzeichnis} %Symbolverzeichnis erstellen
 \makeglossaries %Glossar-Befehle anschalten
 \RequirePackage{scrhack}

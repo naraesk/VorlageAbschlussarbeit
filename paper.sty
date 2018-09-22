@@ -15,23 +15,23 @@
 }
 
 % Literaturverzeichnis
-% \RequirePackage[
-% 	citestyle=authoryear,
-% 	bibstyle=authortitle,
-% 	sorting=nyt,
-% 	dashed=false,
-% 	backend=biber,
-% 	sortlocale=de_DE,
-% 	hyperref=true,
-% 	defernumbers=true,
-% 	maxcitenames=2,
-% 	mincitenames=1,
-% 	maxbibnames=8,
-% 	uniquelist=false,
-%         url=true,
-%         doi=true,
-%         eprint=false
-% ]{biblatex}
+\RequirePackage[
+	citestyle=authoryear,
+	bibstyle=authortitle,
+	sorting=nyt,
+	dashed=false,
+	backend=biber,
+	sortlocale=de_DE,
+	hyperref=true,
+	defernumbers=true,
+	maxcitenames=2,
+	mincitenames=1,
+	maxbibnames=8,
+	uniquelist=false,
+        url=true,
+        doi=true,
+        eprint=false
+]{biblatex}
 
 \makeatletter
 \AtBeginDocument{
@@ -41,11 +41,11 @@
 %     pdfkeywords = {\@keywords}
   }
 }
-% \makeatother
-% \DeclareFieldFormat{postnote}{#1}
-% \DeclareFieldFormat{multipostnote}{#1}
+\makeatother
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
 % 
-% \setcounter{biburlnumpenalty}{100} % damit zu lange ISBN-Nummern umgebrochen werden
+\setcounter{biburlnumpenalty}{100} % damit zu lange ISBN-Nummern umgebrochen werden
 
 % Grafiken
  \RequirePackage{graphicx}
@@ -108,6 +108,7 @@
 \RequirePackage{float}
 \RequirePackage{mathptmx}
 
+
 % Zitate
 \RequirePackage[autostyle, babel]{csquotes}
 \makeatletter
@@ -131,10 +132,12 @@
         \end{quote}
     \else
           \ifthenelse{\equal{#1}{\empty}}%
-       {„\itshape #3 \normalfont“ \quelle{#2}}%
-        {„\itshape #3 \normalfont“ \quelle[#1]{#2}}%
+       {„\itshape #3\normalfont“ \quelle{#2}}%
+        {„\itshape #3\normalfont“ \quelle[#1]{#2}}%
 \fi
     \endgroup}
+    
+\makeatletter
 
 % \RequirePackage{microtype}
 \RequirePackage{siunitx}

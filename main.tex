@@ -1,6 +1,8 @@
 \documentclass{iwi}
 \usepackage{paper}
 
+\addbibresource{Literatur.bib}
+
 \title{Entschlüsselung von Funksprüchen am Beispiel von Enigma}
 \author{Alan Turing}
 
@@ -14,9 +16,11 @@
 	
 \tableofcontents 	% Inhaltsverzeichnis
 \listoffigures 		% Abbildungsverzeichnis
-\listoftables 		% Inhaltsverzeichnis
+\listoftables 		% Tabellenverzeichnis
 \lstlistoflistings	% Listingverzeichnis
 \input{Abkuerzungsverzeichnis}
+
+
 % \listoftodos % auskommentieren, wenn leer?
 
 % Hauptteil
@@ -46,7 +50,7 @@ Das ist eine Referenz zu Abschnitt~\ref{chap:Einleitung} mit einem geschützten 
 
 \section{Abkürzungen} \label{sec:Abkürzungen}
 
-So verwendet man eine \gls{Abk}. Und zwar jedes Mal, wenn man \gls{Abk} benutzt.
+So verwendet man eine \gls{Abk} . Und zwar jedes Mal, wenn man \gls{Abk} benutzt.
 
 \section{Abbildungen} \label{sec:Abbildungen}
 
@@ -61,7 +65,7 @@ Siehe Abbildung~\ref{img:meme}. Abbildungen werden unten oder oben auf einer Sei
 
 \section{Listings} \label{sec:Listings}
 
-Siehe Listing~\ref{lst:helloWorld}. Auch Listings werden unten oder oben auf einer Seite platziert.
+Siehe Listing~\ref{lst:helloWorld}. Auch Listings werden unten oder oben auf einer Seite platziert. 
 Angabe der Sparche kann entsprechend geändert werden, das Syntax-Highlighting muss in paper.sty für jede Sprache einzeln festgelegt werden.
 
 
@@ -96,9 +100,60 @@ Siehe Tabelle~\ref{tbl:pokemon} und Quelltextkommentare.
 
 \section{Quellen}
 
-Mit dem Befehl todo können Notizen erstellt werden.
+Zum Angaben von Quellen gibt es zwei eigens definierte Befehle: $\backslash quelle$ und $\backslash zitat$.
+$\backslash zitat$ ist für direkte Zitate. Kurze Zitate werden im Fließtext eingebunden, längere Zitate werden automatisch als eigener Absatz eingerückt.
+$\backslash quelle$ ist für indirekte Zitate. 
+Im Fließtext wird ``vgl'' automatisch erägnzt, innerhalb einer Abbildungsunterschrift ``in Anlehnung an''. 
+Beide Befehle sollten für eine/n Autor/in, für zwei Autor/innen sowie für mehrere Autor/innen funktionieren.
 
-\todo[inline]{Quellen und Literaturverzeichnis}
+Um die einzelnen Parameter zu verstehen, am besten direkt in den Quelltext schauen. Use the source, Luke! \quelle{Lucas}
+Mit Quellenangaben sollte immer sehr sorgfältig umgegangen werdne. 
+\zitat{Spiderman}{
+With great power comes great responsibility}
+Und hier noch ein langes Zitat, das automatisch eingerückt wird:
+ \zitat[14f]{Carroll}{
+Verdaustig war's, und glaße Wieben \\
+rotterten gorkicht im Gemank. \\
+Gar elump war der Pluckerwank, \\
+und die gabben Schweisel frieben. \\
+\\
+»Hab acht vorm Zipferlak, mein Kind! \\
+Sein Maul ist beiß, sein Griff ist bohr. \\
+Vorm Fliegelflagel sieh dich vor, \\
+dem mampfen Schnatterrind.« \\
+\\
+Er zückt' sein scharfgebifftes Schwert, \\
+den Feind zu futzen ohne Saum, \\
+und lehnt' sich an den Dudelbaum \\
+und stand da lang in sich gekehrt. \\
+\\
+In sich gekeimt, so stand er hier, \\
+da kam verschnoff der Zipferlak \\
+mit Flammenlefze angewackt \\
+und gurgt' in seiner Gier. \\
+\\
+Mit Eins! und Zwei! und bis auf's Bein! \\
+Die biffe Klinge ritscheropf! \\
+Trennt' er vom Hals den toten Kopf, \\
+und wichernd sprengt' er heim. \\
+\\
+»Vom Zipferlak hast uns befreit? \\
+Komm an mein Herz, aromer Sohn! \\
+Oh, blumer Tag! Oh, schlusse Fron!« \\
+So kröpfte er vor Freud'. \\
+\\
+Verdaustig war's, und glaße Wieben \\
+rotterten gorkicht im Gemank. \\
+Gar elump war der Pluckerwank, \\
+und die gabben Schweisel frieben.
+}
 
+\section{Todo-Notes}
+
+Es ist auch möglich, Notizen zu erstellen:
+
+\todo[inline]{Anhang ergänzen}
+
+\printbibliography[heading=bibintoc]
 
 \end{document}
