@@ -17,8 +17,10 @@
 \ProcessOptions
 \LoadClass{scrreprt}
 \renewcommand{\abstractname}{Abstract}
-% \addto\captionsgerman{\renewcommand*\abstractname{Abstract}}
-% \addto\captionsenglish{\renewcommand*\abstractname{Summary}}
+\RequirePackage[ngerman]{babel}
+
+\addto\captionsngerman{\renewcommand*\abstractname{Abstract}}
+\addto\captionsenglish{\renewcommand*\abstractname{Summary}}
 \setuptoc{toc}{totoc}
 
 
