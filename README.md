@@ -1,9 +1,9 @@
 # Latex-Vorlage für Abschlussarbeiten
 
-Inoffizielle, nverbindliche und unvollständige Latex-Vorlage für Abschlussarbeiten am IWI. Bei Problemen oder Fragen bitte ein Issue eröffnen
+Inoffizielle, unverbindliche und unvollständige Latex-Vorlage für Abschlussarbeiten am IWI. Bei Problemen oder Fragen bitte ein Issue eröffnen
 
 # Benutzung
-Zum Erzeugen des PDFs müssen nacheinander die folgenden Schritte ausgeführt werden. Dies kann entweder über die Konsele oder direkt aus der Latex-Umgebung heraus geschehen.
+Zum Erzeugen des PDFs müssen nacheinander die folgenden Schritte ausgeführt werden. Dies kann entweder über die Konsole oder direkt aus der Latex-Umgebung heraus geschehen.
 ```
 pdflatex main.tex
 biber main.bcf
