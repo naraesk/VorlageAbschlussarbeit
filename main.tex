@@ -50,7 +50,9 @@ Das ist eine Referenz zu Abschnitt~\ref{chap:Einleitung} mit einem geschützten 
 
 \section{Abkürzungen} \label{sec:Abkürzungen}
 
-So verwendet man eine \gls{Abk} . Und zwar jedes Mal, wenn man \gls{Abk} benutzt.
+So verwendet man eine \gls{Abk} . Und zwar jedes Mal, wenn man \gls{Abk} benutzt. 
+Latex überprüft automatisch, an welcher Stelle die \gls{Abk} das erste Mal verwendet wird und führt dort die \gls{Abk} ein.
+In der Abkuerzungsverzeichnis.tex können beliebige eigene Abkürzungen definiert werden, zum Beispiel \gls{BEANS}.
 
 \section{Abbildungen} \label{sec:Abbildungen}
 
@@ -159,7 +161,7 @@ Es ist auch möglich, Notizen zu erstellen:
 
 % Schluss
 
-	\appendix
+ 	\appendix
 	\pagenumbering{Roman}
 	\setcounter{page}{\value{frontpages}}
 	\include{Anhang}
