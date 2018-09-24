@@ -157,6 +157,13 @@ Es ist auch möglich, Notizen zu erstellen:
 
 \todo[inline]{Anhang ergänzen}
 
-\printbibliography[heading=bibintoc]
+% Schluss
 
+	\appendix
+	\pagenumbering{Roman}
+	\setcounter{page}{\value{frontpages}}
+	\include{Anhang}
+	\printbibliography[heading=bibintoc]
+
+	\include{Erklaerung}
 \end{document}
