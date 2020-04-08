@@ -7,12 +7,12 @@
 
 {
   \PassOptionsToPackage{singlespacing}{setspace}
-  \PassOptionsToClass{a4paper,10pt,fleqn,oneside,final, listof=totoc, index=totoc,numbers=noendperiod, ngerman, abstracton}{scrreprt}
+  \PassOptionsToClass{a4paper,10pt,fleqn,oneside,final, listof=totoc, index=totoc,numbers=noendperiod, ngerman}{scrreprt}
 }
 \DeclareOption*{}
 {
   \PassOptionsToPackage{onehalfspacing}{setpace}
-  \PassOptionsToClass{a4paper,12pt,fleqn,oneside,final, listof=totoc, index=totoc,numbers=noendperiod, ngerman, abstracton}{scrreprt}
+  \PassOptionsToClass{a4paper,12pt,fleqn,oneside,final, listof=totoc, index=totoc,numbers=noendperiod, ngerman}{scrreprt}
 }
 \ProcessOptions
 \LoadClass{scrreprt}
